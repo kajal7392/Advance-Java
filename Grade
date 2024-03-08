@@ -1,0 +1,49 @@
+//Student Grade Calculator - Java Program
+
+//This Java program calculates the final grade of a student based on scores obtained in various subjects. The program interacts with the user to input subject scores, calculates the average 
+//grade, and provides a final grade along with a corresponding message indicating whether the student has passed or failed.
+
+
+//save this file with 'Grade.java'
+
+
+import java.util.Scanner;
+
+public class Grade {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of subjects: ");
+        int numberOfSubjects = sc.nextInt();
+        
+        double totalMarks = 0;
+
+        for (int i = 1; i <= numberOfSubjects; i++) {
+            System.out.print("Enter the marks for Subject " + i + ": ");
+            double marks = sc.nextDouble();
+            totalMarks += marks;
+        }
+
+        double average = totalMarks / numberOfSubjects;
+        System.out.println("Your average mark is: " + average);
+
+        double percentage = average * 100;
+
+        if (percentage > 90) {
+            System.out.println("Congratulations! You have passed the exam with Grade A+");
+        } else if (percentage > 80 && percentage <= 90) {
+            System.out.println("Congratulations! You have passed the exam with Grade A");
+        } else if (percentage > 70 && percentage <= 80) {
+            System.out.println("Congratulations! You have passed the exam with Grade B");
+        } else if (percentage > 60 && percentage <= 70) {
+            System.out.println("Congratulations! You have passed the exam with Grade C");
+        } else if (percentage > 50 && percentage <= 60) {
+            System.out.println("Congratulations! You have passed the exam with Grade D");
+        } else if (percentage > 40 && percentage <= 50) {
+            System.out.println("Congratulations! You have passed the exam with Grade E");
+        } else {
+            System.out.println("You have failed!");
+        }
+
+        sc.close();
+    }
+}
