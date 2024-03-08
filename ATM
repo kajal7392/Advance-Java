@@ -14,11 +14,21 @@ public class ATMSimulator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        
+        int atmPin = 1234;
+
+        System.out.print("Enter your ATM PIN: ");
+        int enteredPin = scanner.nextInt();
+
+        if (enteredPin != atmPin) {
+            System.out.println("Incorrect PIN. Access Denied!");
+            System.exit(0); // Terminate the program
+        }
+
         double balance = 1000.00; 
 
         while (true) {
-            
-            System.out.println("ATM Menu:");
+            System.out.println("\nATM Menu:");
             System.out.println("1. Check Balance");
             System.out.println("2. Deposit Money");
             System.out.println("3. Withdraw Money");
@@ -28,7 +38,7 @@ public class ATMSimulator {
             
             int choice = scanner.nextInt();
 
-            
+           
             switch (choice) {
                 case 1:
                     System.out.println("Your balance: Rs. " + balance);
@@ -55,21 +65,11 @@ public class ATMSimulator {
                     break;
                 case 4:
                     System.out.println("Thank you for using the ATM. Goodbye!");
-                    System.exit(0);
+                    System.exit(0); 
                     break;
                 default:
                     System.out.println("Invalid choice. Please enter a valid option.");
             }
-            scanner.close();
         }
     }
 }
-
-
-
-
-
-
-
-
-
