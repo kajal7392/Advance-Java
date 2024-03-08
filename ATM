@@ -1,0 +1,75 @@
+//Simple ATM Simulator
+
+//This Java program emulates a straightforward Automated Teller Machine (ATM) experience, offering users the ability to check their account balance, deposit money, and withdraw funds. 
+//The program employs if-else statements for transaction determination, utilizes loops to facilitate multiple transactions, and adopts a menu-driven approach using a switch-case structure.
+//Users can seamlessly navigate through the available transactions until opting to exit the simulation.
+
+
+//save this file with 'ATMSimulator.java'
+
+import java.util.Scanner;
+
+public class ATMSimulator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double balance = 1000.00; 
+
+        while (true) {
+            
+            System.out.println("ATM Menu:");
+            System.out.println("1. Check Balance");
+            System.out.println("2. Deposit Money");
+            System.out.println("3. Withdraw Money");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+
+            
+            int choice = scanner.nextInt();
+
+            
+            switch (choice) {
+                case 1:
+                    System.out.println("Your balance: Rs. " + balance);
+                    break;
+                case 2:
+                    System.out.print("Enter the amount to deposit: Rs. ");
+                    double depositAmount = scanner.nextDouble();
+                    if (depositAmount > 0) {
+                        balance += depositAmount;
+                        System.out.println("Deposit successful!");
+                    } else {
+                        System.out.println("Invalid amount for deposit.");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter the amount to withdraw: Rs. ");
+                    double withdrawAmount = scanner.nextDouble();
+                    if (withdrawAmount > 0 && withdrawAmount <= balance) {
+                        balance -= withdrawAmount;
+                        System.out.println("Withdrawal successful! Remaining balance: Rs. " + balance);
+                    } else {
+                        System.out.println("Invalid amount or insufficient funds for withdrawal.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Thank you for using the ATM. Goodbye!");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
+            }
+            scanner.close();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
