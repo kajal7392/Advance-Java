@@ -3,6 +3,8 @@
 //This Java project is designed to function as a straightforward calculator, allowing users to perform basic arithmetic operations on two input numbers.The program prompts users to input 
 //two numbers and then provides options for addition, subtraction, multiplication, and division. The calculator continues to perform calculations until the user chooses to exit.
 
+//save this file with 'SimpleCalculator.java'
+
 import java.util.Scanner;
 
 public class SimpleCalculator {
